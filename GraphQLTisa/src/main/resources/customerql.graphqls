@@ -1,0 +1,25 @@
+type Customer {
+    id: ID!,
+    name: String,
+    last_Name: String,
+    housing_Address: String,
+    cashing_Address: String
+    credit_Card: Int,
+    expiration_Month: Int,
+    expiration_Year: Int
+}
+
+type Query {
+    customers(count: Int):[Customer]
+    customer(id: ID): Customer
+}
+
+type Mutation {
+    addCustomer(name: String!, last_Name: String!, housing_Address: String, cashing_Address: String, credit_Card: Int,
+        expiration_Month: Int, expiration_Year: Int): Customer
+    deleteCustomer(id: ID!): Boolean
+    updateCustomer(id: ID!, name: String!, last_Name: String!, housing_Address: String, cashing_Address: String, credit_Card: Int,
+        expiration_Month: Int, expiration_Year: Int): Customer
+}
+
+
